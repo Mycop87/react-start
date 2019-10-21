@@ -2,7 +2,7 @@ import * as React from 'react';
 import UserListComponent from '../components/user-list';
 import SpinnerComponent from '../components/spinner';
 import { ToastContainer } from 'react-toastify';
-import Home from './home';
+import Login from './Login';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   BrowserRouter as Router, Switch, Route, Link,
@@ -15,18 +15,10 @@ export default class App extends React.Component<{}, {}> {
 
   public render () {
     return <Router>
-      <ul>
-        <li>
-          <Link to="/home">Home</Link>
-        </li>
-        <li>
-          <Link to="/users">Users</Link>
-        </li>
-      </ul>
       <div>
         <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route path="/home" component={Home}/>
+          <Route exact path="/" component={Login}/>
+          <Route path="/login" component={Login}/>
           <Route path="/users" component={UserListComponent}/>
         </Switch>
       </div>

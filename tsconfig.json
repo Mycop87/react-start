@@ -7,18 +7,27 @@
     "lib": [
       "es2015",
       "es2017",
-      "dom"
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
     ],
     "removeComments": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": false,
     "jsx": "react",
     "allowJs": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "components/*": [
         "src/components/*"
       ]
     }
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
 }

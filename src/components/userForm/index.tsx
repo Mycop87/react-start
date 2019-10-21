@@ -33,11 +33,15 @@ export class UserForm extends Component<IProps, IState> {
     this.props.onChange(user);
   }
 
+  private isEmailReadonly():boolean{
+    return this.state.user.isDefault || this.state.user.id
+  }
+
   public render () {
     const user = this.state.user.model;
     return <form>
       <div className="lvl">
-        <Input type='email' readOnly={user.isDefault || user.id} label={'Email'} onChange={(ev) => {this.onFieldChange(ev, 'email');}} value={user.email}/>
+        <Input type='email' readOnly={this.isEmailReadonly()} label={'Email'} onChange={(ev) => {this.onFieldChange(ev, 'email');}} value={user.email}/>
       </div>
       {!user.id ? <div className="lvl">
         <Input type='password' label={'Password'} onChange={(ev) => {this.onFieldChange(ev, 'password');}}
