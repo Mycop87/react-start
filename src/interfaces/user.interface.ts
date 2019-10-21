@@ -4,5 +4,6 @@ export interface IUser{
   lastName:string;
   phone:string;
   isDefault:boolean;
+  password:string;
   [index:string]: any;
 }

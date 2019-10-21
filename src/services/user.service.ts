@@ -5,7 +5,15 @@ export const userService = {
     return  httpService.get('users')
   },
 
-  deleteUser:(user) => {
-    return  httpService.delete(`users?id=${user.id}`)
+  deleteUser:(id) => {
+    return  httpService.delete(`users?id=${id}`)
+  },
+
+  updateUser:(user) => {
+    return  httpService.put(`users`, user)
+  },
+
+  createUser:(user) => {
+    return  httpService.post(`users`, user)
   }
 }

@@ -14,11 +14,17 @@ module.exports = {
         filename: 'bundle.js',
         publicPath:'/static/'
     },
+    optimization: {
+        minimize: false
+    },
+    devServer: {
+        historyApiFallback:true,
+    },
     module: {
         rules:[
             {
                 test: /\.js/,
-                loaders:[ 'babel-loader', ],
+                loaders:[ 'babel-loader','react-hot' ],
                 include: path.join(__dirname, 'src')
             },
             {
