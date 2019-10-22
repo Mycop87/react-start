@@ -18,10 +18,11 @@ var Error = /** @class */ (function () {
             message: 'some Error test',
         };
     }
-    Error.prototype.getEObject = function (status, message) {
+    Error.prototype.getEObject = function (status, message, code) {
         return {
             error: __assign(__assign({}, this.error), { status: status,
-                message: message })
+                message: message,
+                code: code })
         };
     };
     return Error;

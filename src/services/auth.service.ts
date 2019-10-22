@@ -1,4 +1,5 @@
 import httpService from './http.service';
+import messageService from './message.service';
 
 export class AuthService {
 
@@ -10,6 +11,12 @@ export class AuthService {
     return httpService.post(`auth/login`, {
       email,
       password,
+    }).then((res:any)=>{
+        this.setToken(res.token)
+        return res
+    },(error) => {
+      messageService.error(error.message)
+      return Promise.reject(error)
     });
   }
 

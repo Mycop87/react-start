@@ -14,7 +14,7 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(AuthService.checkToken);
+app.use(AuthService.checkToken);
 
 app.use('/api', routes);
 

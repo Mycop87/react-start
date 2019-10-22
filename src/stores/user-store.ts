@@ -33,19 +33,19 @@ class UserStore {
 
   constructor () {
     this.users = [];
-    this.fetch();
+
   }
 
   getUsers () {
+    if(!this.users.length){
+      setTimeout(()=>{this.fetch(),100});
+    }
     return this.users;
   }
 
   @action fetch () {
-    if (this.users.length) {
-      return;
-    }
     userService.getUsers()
-               .then((users: IUser[] | any) => this.putUsers(users));
+               .then((users: IUser[]) => this.putUsers(users));
   }
 
   @action('createNewUser') createNewUser (user?) {

@@ -9,12 +9,12 @@ class AuthService {
     const url = req.originalUrl;
     if (!url.includes('api/auth') && (url.includes('api/users') && req.method.toLowerCase() !=='post')) {
       if (!req.headers.authorization || !req.headers.authorization.includes('Bearer')) {
-        const error = Error.getEObject(403, 'invalid Token');
+        const error = Error.getEObject(403, 'invalid Token', 1000);
         return res.status(error.error.status).json(error);
       }
       const user = await DataBaseService.getDocument('users', { token: req.headers.authorization.substring(7)})
       if (!user) {
-        const error = Error.getEObject(403, 'invalid Token');
+        const error = Error.getEObject(403, 'invalid Token', 1000);
         return res.status(error.error.status).json(error);
       }
       next();

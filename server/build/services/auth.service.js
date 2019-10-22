@@ -52,14 +52,14 @@ var AuthService = /** @class */ (function () {
                         url = req.originalUrl;
                         if (!(!url.includes('api/auth') && (url.includes('api/users') && req.method.toLowerCase() !== 'post'))) return [3 /*break*/, 2];
                         if (!req.headers.authorization || !req.headers.authorization.includes('Bearer')) {
-                            error = Error.getEObject(403, 'invalid Token');
+                            error = Error.getEObject(403, 'invalid Token', 1000);
                             return [2 /*return*/, res.status(error.error.status).json(error)];
                         }
                         return [4 /*yield*/, DataBaseService.getDocument('users', { token: req.headers.authorization.substring(7) })];
                     case 1:
                         user = _a.sent();
                         if (!user) {
-                            error = Error.getEObject(403, 'invalid Token');
+                            error = Error.getEObject(403, 'invalid Token', 1000);
                             return [2 /*return*/, res.status(error.error.status).json(error)];
                         }
                         next();

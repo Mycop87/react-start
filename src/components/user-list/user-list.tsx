@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import 'react-table/react-table.css';
 
 type IProps = {
-  users: any[];
+  users: any;
   userStore: any;
 }
 

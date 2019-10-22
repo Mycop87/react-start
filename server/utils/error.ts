@@ -12,12 +12,13 @@ export class Error {
       message: 'some Error test',
   } as IError;
 
-  public getEObject (status: number, message: string) {
+  public getEObject (status: number, message: string, code?:string) {
     return {
       error:{
         ...this.error,
         status,
         message,
+        code
       }
     };
   }

@@ -13,6 +13,6 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(AuthService.checkToken);
+app.use(AuthService.checkToken);
 app.use('/api', routes);
 app.listen(port, host, function () { return console.log("Example app listening  http://" + host + ":" + port); });
