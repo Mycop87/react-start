@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Input from '../components/Input';
+import Input from '@/components/Input';
 import Button from '@material-ui/core/Button';
-import authService from '../services/auth.service';
+import authService from '@/services/auth.service';
 import {
   withRouter,
 } from 'react-router-dom';

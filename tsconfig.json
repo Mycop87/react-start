@@ -17,17 +17,12 @@
     "allowSyntheticDefaultImports": false,
     "jsx": "react",
     "allowJs": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "components/*": [
-        "src/components/*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
-  ],
+    "src/*"
+  ]
 }

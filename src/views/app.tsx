@@ -1,9 +1,9 @@
 import * as React from 'react';
-import UserListComponent from '../components/user-list';
-import SpinnerComponent from '../components/spinner';
-import Menu from '../components/menu';
+import SpinnerComponent from '@/components/spinner';
+import Menu from '@/components/menu';
 import { ToastContainer } from 'react-toastify';
 import Login from './Login';
+import Users from './Users';
 
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -22,7 +22,7 @@ export default class App extends React.Component<{}, {}> {
         <Switch>
           <Route exact path="/" component={Login}/>
           <Route path="/login" component={Login}/>
-          <Route path="/users" component={UserListComponent}/>
+          <Route path="/users" component={Users}/>
         </Switch>
       </div>
       <SpinnerComponent/>

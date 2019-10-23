@@ -1,6 +1,6 @@
 import axios  from 'axios';
-import authService from '../services/auth.service';
-import { environment } from '../environments/environment';
+import authService from '@/services/auth.service';
+import { environment } from '@/environments/environment';
 export default {
   setupInterceptors: () => {
     axios.interceptors.response.use((response) => {

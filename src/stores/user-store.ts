@@ -1,7 +1,7 @@
 import { observable, action, computed } from 'mobx';
-import { userService } from '../services/user.service';
-import messageService from '../services/message.service';
-import { IUser } from '../interfaces/user.interface';
+import { userService } from '@/services/user.service';
+import messageService from '@/services/message.service';
+import { IUser } from '@/interfaces/user.interface';
 
 class User {
   @observable data = observable.map();
@@ -15,7 +15,7 @@ class User {
       isDefault: false,
       id:        null,
       password:  '', ...userData,
-    });
+    } as IUser);
   }
 
 
@@ -73,6 +73,7 @@ class UserStore {
             return usr;
           });
           this.users  = users;
+          messageService.success('user was Updated');
           return resolve(res);
         });
       });
@@ -80,6 +81,7 @@ class UserStore {
     return new Promise(resolve => {
       userService.createUser(user).then((res) => {
         this.users.push(new User(res));
+        messageService.success('user was Created');
         return resolve(res);
       });
     });

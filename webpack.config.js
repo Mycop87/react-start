@@ -7,7 +7,10 @@ module.exports = {
         './src/index.tsx'
     ],
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.tsx', '.js'],
+        alias: {
+            '@': path.resolve(__dirname, 'src/')
+        }
     },
     output: {
         path: path.join(__dirname, 'build'),
@@ -30,14 +33,23 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 loader: 'awesome-typescript-loader'
+
             },
             {
-                test: /\.scss/,
-                loaders:['style-loader','sass-loader']
+                test: /\.(sass|scss)$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'sass-loader',
+
+                    },
+                ],
             },
             {
                 test: /\.css/,
                 loaders:['style-loader','css-loader']
+
             }
         ]
     }

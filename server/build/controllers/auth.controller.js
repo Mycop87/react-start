@@ -66,8 +66,11 @@ var AuthController = /** @class */ (function () {
                             return [2 /*return*/, res.status(loginError.error.status).json(loginError)];
                         }
                         userData = {
-                            password: user.password,
                             email: user.email,
+                            firstName: user.firstName,
+                            lastName: user.lastName,
+                            phone: user.phone,
+                            r: Math.random(),
                         };
                         head = Buffer.from(JSON.stringify({
                             alg: 'HS256',

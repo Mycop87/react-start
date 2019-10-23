@@ -1,5 +1,5 @@
 import httpService from './http.service';
-import { IUser } from '../interfaces/user.interface';
+import { IUser } from '@/interfaces/user.interface';
 
 export const userService = {
   getUsers:(): Promise<IUser[]> => {

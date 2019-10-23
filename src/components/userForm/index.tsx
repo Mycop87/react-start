@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { IUser } from '../../interfaces/user.interface';
-import Input from '../Input';
-import userStore from '../../stores/user-store';
+import { IUser } from '@/interfaces/user.interface';
+import Input from '@/components/Input';
+import userStore from '@/stores/user-store';
 
 import 'react-table/react-table.css';
 
 type IProps = {
-  user: IUser; onChange: Function;
+  user: IUser;
+  onChange: Function;
 }
 
 type IState = {

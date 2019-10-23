@@ -24,8 +24,11 @@ class AuthController {
       return res.status(loginError.error.status).json(loginError);
     }
     const userData = {
-      password: user.password,
-      email:    user.email,
+      email:user.email,
+      firstName:user.firstName,
+      lastName:user.lastName,
+      phone:user.phone,
+      r:Math.random(),
     };
     let head       = Buffer.from(JSON.stringify({
       alg: 'HS256',
